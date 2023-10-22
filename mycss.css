@@ -1,0 +1,306 @@
+body {
+    background-color:olive;
+}
+
+
+.navbar-nav .nav-link {
+    font-family: sans-serif;
+    font-size: 18px;
+    margin-right: 20px;
+    text-align: center;
+    color: darkorange;
+    white-space: normal; 
+}
+
+.navbar-nav .nav-item {
+    margin-right: 20px; 
+    text-align: center; 
+}
+
+.dropdown-menu {
+    background-color: darkgoldenrod; 
+    border: none;
+}
+
+h3 a {
+    text-decoration: none; 
+    color: orangered; 
+    font-weight: bold; 
+}
+
+h3 a:hover {
+    color: yellow; 
+}
+
+h3 a:visited{
+    color:darkorange;
+}
+
+h3 a:active{
+    color:darkgoldenrod;
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    color: darkorange;
+}
+
+
+p{
+    color: darkolivegreen;
+}
+
+hr{
+    color:darkolivegreen;
+    height: 2px;
+}
+
+.heading {
+    display: flex; 
+    align-items: center;
+    margin-left: 10px;
+    justify-content: space-between;
+} 
+
+.heading img {
+    width: 350px;
+    height: 300px;
+}
+
+.heading h2 {
+    text-align: right; 
+    margin-right: 800px 0;  
+    color:darkolivegreen;
+}
+
+.heading p{
+    margin-top: 10px;
+    margin-right: 600px;  
+    color: darkorange; 
+}
+
+
+
+h2 a {
+    text-decoration: none; 
+    color: darkolivegreen; 
+    font-weight: bold; 
+}
+
+h2 a:hover {
+    color: darkorange; 
+}
+
+h2 a:visited{
+    color:brown;
+}
+
+h2 a:active{
+    color:darkgoldenrod;
+}
+
+.images {
+    margin-top: 100px;
+    border: 20px black;
+    display: flex; 
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.image-container {
+    text-align: center; 
+}
+
+.images img{
+    display: inline-block; 
+    border: 20px black;
+
+}
+
+.images h5{
+    margin: 5px 0;
+    color:darkolivegreen;    
+}
+
+.images p{
+    margin: 5px 0;
+    color: darkorange;
+}
+
+h3 a {
+    text-decoration: none; 
+    color: darkolivegreen; 
+    font-weight: bold; 
+}
+
+h3 a:hover {
+    color: darkorange; 
+}
+
+h3 a:visited{
+    color:brown;
+}
+
+h3 a:active{
+    color:darkgoldenrod;
+}
+
+.weather-table {
+    margin-top: 80px;
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.weather-table th, .weather-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+  
+.weather-table th {
+    background-color: darkorange;
+    font-weight: bold;
+    text-align: center;
+}
+  
+.weather-table tr:nth-child(even) {
+    background-color: darkolivegreen;
+}
+  
+.weather-table tr:hover {
+    background-color: darkorange;
+}
+
+.form {
+    margin-top: 100px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+  
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+  
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid darkolivegreen;
+    border-radius: 4px;
+}
+  
+button {
+    background-color: darkolivegreen;
+    color: darkorange;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+button:hover {
+    background-color: darkolivegreen;
+}
+
+.lists{
+    margin-top: 80px;
+    display: flex;
+    background-color: darkolivegreen;
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style-type: square;
+}
+
+ol{
+    list-style-type: lower-roman;
+}
+
+li{
+    color:darkorange;
+}
+
+.countdown-timer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#timer {
+    font-size: 36px;
+    animation: countdown 1s linear infinite;
+}
+
+@keyframes countdown {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes endAnimation {
+    0% { color: black; }
+    50% { color: red; }
+    100% { color: black; }
+}
+
+#timer.end {
+    animation: countdown 1s linear infinite, endAnimation 1s linear infinite;
+}
+
+.error {
+    color: red;
+}
+
+.to-do-container {
+    margin-top: 20px;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.tabs {
+    margin-top: 20px;
+}
+
+.tab-button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.tab-content {
+    display: none;
+    margin-top: 10px;
+}
+
+.accordion {
+    margin-top: 20px;
+}
+
+.accordion-button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.accordion-content {
+    display: none;
+    margin-top: 10px;
+}
+
