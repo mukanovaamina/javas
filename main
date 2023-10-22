@@ -59,7 +59,7 @@
                     <button type="button" class="btn" data-bs-toggle="dropdown"> More </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="sport.html" target="_blank">Sport</a></li>
-                        <li><a class="dropdown-item" href="https://github.com/mukanovaamina/javas/blob/e7f0de00eaf58f20c892a27c2d1c4f93325e8b3c/lifestyle.html" target="_blank">Lifestyle</a></li>
+                        <li><a class="dropdown-item" href="lifestyle.html" target="_blank">Lifestyle</a></li>
                         <li><a class="dropdown-item" href="form.html" target="_blank">Form</a></li>
                     </ul>
                 </div>
