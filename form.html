@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form for feedback</title>
+    <link rel="icon" type="image/x-icon" href="https://github.com/mukanovaamina/javas/blob/main/image/fvcn.ico.png?raw=true">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="2css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="hed">
+        <h2>Form for feedback to <br>Mukanova Amina <i class="fas fa-heart"></i> <hr></i></h2>
+    </div>
+
+    <div class="countdown-timer">
+        <h3>Timer</h3>
+        <div id="timer">00:00</div>
+        <input type="number" id="duration" placeholder="Set timer duration (minutes)">
+        <button onclick="startTimer()">Start Timer</button>
+    </div>
+
+    <section id="form">
+        <form class="form" onsubmit="return validateForm()">
+            <label for="firstname">Your firstname:</label>
+            <input type="text" id="firstname" name="firstname" pattern=".{1,}" required>
+            <span id="firstname-error" class="error"></span>
+          
+            <label for="lastname">Your lastname:</label>
+            <input type="text" id="lname" name="lastname" pattern=".{1,}" required>
+            <span id="lastname-error" class="error"></span>
+          
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" pattern=".{1,}" required></textarea>
+            <span id="message-error" class="error"></span>
+          
+            <button type="submit" class="btn btn-success">Send</button>
+        </form>
+    </section>
+
+    <div class="to-do-container">
+        <h2>To-Do List</h2>
+        <input type="text" id="task" placeholder="Add a new task...">
+        <button onclick="addTask()">Add</button>
+        <ul id="task-list">
+        </ul>
+    </div>
+
+    <script>
+        // add button "add" to adding tasks
+        const taskInput = document.getElementById("task");
+        const taskList = document.getElementById("task-list");
+
+        function addTask() {
+            const taskText = taskInput.value.trim();
+            if (taskText === "") {
+                return;
+            }
+
+            const listItem = document.createElement("li");
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            const taskLabel = document.createElement("label");
+            taskLabel.textContent = taskText;
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.onclick = function () {
+                taskList.removeChild(listItem);
+            };
+
+            listItem.appendChild(checkbox);
+            listItem.appendChild(taskLabel);
+            listItem.appendChild(deleteButton);
+
+            taskList.appendChild(listItem);
+
+            taskInput.value = "";
+
+            checkbox.addEventListener("change", function () {
+                if (checkbox.checked) {
+                    taskLabel.classList.add("completed");
+                } else {
+                    taskLabel.classList.remove("completed");
+                }
+            });
+        }
+
+        function validateForm() {
+            //function of form validation
+            const firstname = document.getElementById("firstname").value;
+            const lastname = document.getElementById("lname").value;
+            const message = document.getElementById("message").value;
+            let isValid = true;
+
+            const firstnameError = document.getElementById("firstname-error");
+            const lastnameError = document.getElementById("lastname-error");
+            const messageError = document.getElementById("message-error");
+
+            firstnameError.textContent = "";
+            lastnameError.textContent = "";
+            messageError.textContent = "";
+
+            if (firstname === "") {
+                isValid = false;
+                firstnameError.textContent = "Please enter your first name.";
+            }
+
+            if (lastname === "") {
+                isValid = false;
+                lastnameError.textContent = "Please enter your last name.";
+            }
+
+            if (message === "") {
+                isValid = false;
+                messageError.textContent = "Please enter your message.";
+            }
+
+            //add alert about success sending
+            if (isValid) {
+                alert("Feedback sent successfully!");
+            }
+
+            return isValid;
+        }
+        
+        //timer
+        let timerInterval;
+        let timerRunning = false;
+
+        function startTimer() {
+            if (timerRunning) {
+                clearInterval(timerInterval);
+            }
+
+            const duration = document.getElementById("duration").value;
+            const timer = document.getElementById("timer");
+            let seconds = duration * 60;
+
+            function updateTimer() {
+                const minutes = Math.floor(seconds / 60);
+                const remainingSeconds = seconds % 60;
+                timer.textContent = `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
+                if (seconds === 0) {
+                    clearInterval(timerInterval);
+                    timer.classList.add("end");
+                }
+                seconds--;
+            }
+
+            updateTimer();
+            timerInterval = setInterval(updateTimer, 1000);
+            timerRunning = true;
+        }
+    </script>
+</body>
+</html>
