@@ -194,11 +194,11 @@
             </tr>
         </table>
 
-        <h5>Weather by</h5>
-        <ul class="list-group text-success">
-            <li class="list-group-item bg-dark text-warning">kzgydromet</li>
-            <li class="list-group-item bg-dark text-warning">pogodakz</li>
-        </ul>
+         <h5 onclick="toggleAccordion('weatherByAccordion')" class="accordion-button">Weather by</h5>
+         <ul id="weatherByAccordion" class="list-group text-success accordion-content">
+            <li class="list-group-item bg-dark text-success">kzgydromet</li>
+            <li class="list-group-item bg-dark text-success">pogodakz</li>
+         </ul>
     </section>
 
     <div class="container">
